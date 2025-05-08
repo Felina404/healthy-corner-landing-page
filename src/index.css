@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 
 .header-logo-line::after {
@@ -11,3 +9,4 @@
   background-color: #e2e8f0; /*gray-300 */
   margin-top: 1rem; 
 }
+
