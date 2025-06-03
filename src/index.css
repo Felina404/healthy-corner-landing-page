@@ -10,3 +10,23 @@
   margin-top: 1rem; 
 }
 
+.divider
+ {
+  @apply relative w-[50%] h-0.5 bg-[#d77c3e] my-4;
+}
+
+.divider:after
+{
+  content: "";
+	position: absolute;
+	z-index: 1;
+	top: -9px;
+	left: calc(50% - 9px);
+	width: 18px;
+	height: 18px;
+	background-color: #d77c3e;
+	border: 1px solid rgb(48,49,51);
+	border-radius: 50%;
+	box-shadow: inset 0 0 0 2px white, 0 0 0 4px white;
+}
+

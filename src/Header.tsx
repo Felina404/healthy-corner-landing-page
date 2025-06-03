@@ -39,7 +39,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
         <>
           {/* Overlay (Grey background when menu is open) */}
           <div 
-            className='md:hidden fixed top-0 left-0 right-0 bottom-0 bg-gray-500 bg-opacity-50 z-10'
+            className='md:hidden fixed top-0 left-0 right-0 bottom-0 bg-gray-500/50 z-10'
             onClick={toggleMenu} // Close menu if clicked on the overlay
           />
 
