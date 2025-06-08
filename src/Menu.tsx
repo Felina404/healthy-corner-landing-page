@@ -7,7 +7,11 @@ function Menu() {
   const [activeCategory, setActiveCategory] = useState("");
   const [activeMenu, setActiveMenu] = useState([]);
   const [page, setPage] = useState(1);
+  const [offersInView, setOffersInView] = useState<boolean[]>([]);
+  const [offers, setOffers] = useState([]);
+
   const menuRef = useRef<HTMLDivElement>(null);
+  const offerRefs = useRef<(HTMLDivElement | null)[]>([]);
 
 
 
@@ -21,6 +25,12 @@ function Menu() {
     fetch('/categories.json')
     .then((res) => res.json())
     .then((data) => setCategories(data)); 
+  },[]);
+
+   useEffect(() => {
+    fetch('/offers.json')
+    .then((res) => res.json())
+    .then((data) => setOffers(data));
   },[]);
 
   useEffect(() => {
@@ -42,6 +52,30 @@ function Menu() {
       menuRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [page]);
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    offerRefs.current.forEach((ref, idx) => {
+      if (!ref) return;
+      const observer = new window.IntersectionObserver(
+        ([entry]) => {
+          setOffersInView((prev) => {
+            const updated = [...prev];
+            updated[idx] = entry.isIntersecting;
+            return updated;
+          });
+        },
+        { threshold: 0.7 }
+      );
+      observer.observe(ref);
+      observers.push(observer);
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, [offers]);
  
 
 
@@ -124,9 +158,46 @@ function Menu() {
        
            </div>     
            <Pagination itemsPerPage={itemsPerPage} totalItems = {activeMenu.length} page={page} setPage={setPage}/>
-           </div>       
+           </div>      
+
+          <div className='relative w-full flex flex-col items-center justify-center'>
+            <div className='divider'></div>
+            <h2 className='text-xl font-bold'>Offers</h2>
+            <div className='flex flex-col flex-wrap justify-center items-center'>
+              {/* <div>
+                <h3 ref={offerRef}
+                className={`transition-all duration-500 ${offerInView ? 'text-4xl shake-animate font-extrabold' : 'text-xl'}`}
+                  >2 + 1 Yogurt bowls</h3>
+              
+              </div> */}
+
+             {offers && offers.map((offer: any, i: number) => (
+              <div key={offer.id} 
+              ref={el => {offerRefs.current[i] = el;}}
+              className={`transition-all duration-500 ${offersInView[i] ? 'text-4xl font-extrabold' : 'text-xl'} flex flex-col items-center justify-center`}>
+                <h3 className='text-[-10em] font-bold mb-2'>{offer.name}</h3>
+                {/* <img src={offer.images} alt={offer.name} className='w-32 h-32 object-cover rounded-full mb-2'/>           */}
+                {/* {offer.images.map((image: string, index: number) => (
+                  <img key={index} src={image} alt={offer.name} className='w-32 h-32 object-cover rounded-full mb-2' />
+                ))} */}
+                {offer.images.map((image: string, index: number) => (
+                  <img
+                    key={index}
+                    src={image}
+                    alt={offer.name}
+                    className={`
+                      w-32 h-32 object-cover rounded-lg mb-2
+                      transition-all duration-900 ease-out
+                      opacity-0
+                      ${offersInView[i] ? 'opacity-100 translate-x-0' : index % 2 === 0 ? '-translate-x-32' : 'translate-x-32'}
+                    `}
+                  />
+                ))}
+            </div>
+            ))}
+            </div> 
     </div>
-     
+     </div>
     
   )
 }
