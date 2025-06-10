@@ -5,6 +5,7 @@ import Hero from './Hero.tsx'
 import Menu from './Menu.tsx'
 import About from './About.tsx'
 import Reservation from './Reservation.tsx'
+import Footer from './Footer.tsx'
 function App() {
 
   return (
@@ -17,6 +18,7 @@ function App() {
           <About />
           <Reservation />
         </main>
+        <Footer />
       </div>
     </>
   )

@@ -4,8 +4,7 @@ import AboutImg from './assets/general.jpg'
 function About() {
 
   return (
-    <div className='
-    '>
+    <div id='about' className=''>
         <div>
             <h1 className='mt-8 text-center text-4xl lg:text-6xl font-extrabold'>Reliable, Delicious - Healthy</h1>
         </div>

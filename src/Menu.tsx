@@ -88,7 +88,7 @@ function Menu() {
     // const totalPages = Math.ceil(activeMenu.length / itemsPerPage);
 
   return (
-    <div className='flex flex-col items-center justify-center'>    
+    <div  className='flex flex-col items-center justify-center'>    
         <div className='relative w-full flex flex-col items-center justify-center'>
            <div className='divider'></div>
            <h2 className='text-xl font-bold'>Top Rated Recipes</h2>
@@ -106,7 +106,7 @@ function Menu() {
            </div>              
            </div>
 
-           <div className='relative w-full flex flex-col items-center'>
+           <div id='menu' className='relative w-full flex flex-col items-center'>
             <div className='divider'></div>
             <h2 className='text-2xl font-bold mb-4'>Menu</h2>
             <div className='flex flex-col md:flex-row  justify-center flex-wrap gap-6'>
@@ -160,7 +160,7 @@ function Menu() {
            <Pagination itemsPerPage={itemsPerPage} totalItems = {activeMenu.length} page={page} setPage={setPage}/>
            </div>      
 
-          <div className='relative w-full flex flex-col items-center justify-center'>
+          <div id='offers' className='relative w-full flex flex-col items-center justify-center'>
             <div className='divider'></div>
             <h2 className='text-xl font-bold'>Offers</h2>
             <div className='flex flex-col flex-wrap justify-center items-center'>

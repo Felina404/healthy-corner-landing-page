@@ -1,0 +1,58 @@
+import { useState } from 'react'
+import './App.css'
+
+function Footer() {
+
+  return (
+    <div id='footer' className='pt-4 bg-gray-800 text-white flex flex-col justify-center items-center'>
+      <div className='flex justify-between items-center w-[80%] px-4 py-2'>
+        <div className='flex flex-col'>
+          <h2 className='text-xl font-semibold'>Do you have any questions?</h2>
+          <p className='mt-2'>Contact us and we will answer any question.</p>
+        </div>
+        <button className='flex-none px-4 py-2 bg-white text-black rounded-full font-semibold cursor-pointer'>Contact Us</button>
+    </div>
+
+      <div className='border-b border-gray-200 w-[80%] p-2'></div>
+
+      
+       <div className='pt-3 flex justify-between items-center w-[80%] px-4 py-2'>
+        <div className='flex gap-4'>
+          <a href="#menu" className="font-semibold"> Menu</a>
+          <a href="#offers" className="font-semibold"> Offers</a>
+          <a href="#about" className="font-semibold"> About</a>
+          <a href="#reservation" className="font-semibold"> Reservation</a>
+        </div>
+        <div className='flex gap-4'>
+          <i className="fab fa-facebook-f text-1xl"></i>
+          <i className="fab fa-instagram text-1xl"></i>
+          <i className="fab fa-twitter text-1xl"></i>
+        </div>
+       </div>
+
+       <div className='gap-4 pt-3 flex flex-col md:flex-row md:justify-between md:items-center w-[80%] px-4 py-2'>
+        <div className='flex flex-col'>
+          <p>Address:</p>
+          <p>15 Street Avenue NY</p>
+        </div>
+        <div className='flex flex-col'>
+          <p>Openning Hours:</p>
+          <p>Mon-Sun: 12:00 AM-12:30 PM</p>
+        </div>
+         <div className='flex flex-col'>
+          <p>Phone:</p>
+          <p>+51 0505742455</p>
+        </div>
+         <div className='flex flex-col'>
+          <p>Email:</p>
+          <p>heathlyCorner@gmail.com</p>
+        </div>
+       </div>
+       
+       <p className='mt-4'>© 2025</p>
+      
+    </div>
+  )
+}
+
+export default Footer

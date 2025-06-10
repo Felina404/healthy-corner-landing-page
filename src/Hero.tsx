@@ -5,7 +5,7 @@ import heroImg from './assets/hero-img.jpg'
 function Hero() {
 
   return (
-    <div className='p-8 bg-beige-100'>
+    <div id='hero' className='p-8 bg-beige-100'>
       <div className="relative">
         <img 
           src={heroImg} 

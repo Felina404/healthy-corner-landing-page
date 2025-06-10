@@ -10,7 +10,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
     };
 
   return (
-    <header className='flex items-center justify-between px-6 py-4'>
+    <header id='header' className='flex items-center justify-between px-6 py-4'>
         <div className='flex items-center space-x-3 mx-auto md:mx-0'>
             <img src={logo} alt="Healthy Corner Logo" 
             className='h-12 w-12 object-contain'
