@@ -1,7 +1,12 @@
 import React, {useState, useEffect, useRef} from 'react';
 import logo from './assets/header-logo.png';
 
-function Header() {
+interface HeaderProps {
+  isDarkMode: boolean
+  toggleDark: () => void
+}
+
+function Header({isDarkMode, toggleDark} : HeaderProps) {
 const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 
@@ -10,30 +15,39 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
     };
 
   return (
-    <header id='header' className='flex items-center justify-between px-6 py-4'>
+    <header id='header' className='flex items-center justify-between px-6 py-4 bg-bg text-fg'>
         <div className='flex items-center space-x-3 mx-auto md:mx-0'>
             <img src={logo} alt="Healthy Corner Logo" 
             className='h-12 w-12 object-contain'
             />
-            <h1 className='text-2xl font-bold text-gray-800'>Healthy Corner</h1>
+            <h1 className='text-2xl font-bold'>Healthy Corner</h1>
         </div>
         <div className='md:hidden flex items-center'>
-            <button onClick={toggleMenu} className="text-gray-600 hover:text-gray-800 focus:outline-none">
+            <button onClick={toggleMenu} className="text-fg hover:text-muted focus:outline-none cursor-pointer">
                 <i className='fas fa-bars text-2xl'></i>
             </button>
         </div>
+        
         {/* desktop navigation */}
-        <div className='hidden md:flex items-center space-x-6'>
+        <div className='hidden md:flex items-center space-x-6 text-fg'>
             <nav className='flex space-x-4'>
-                <a href="#" className='text-gray-600 hover:text-gray-800'>Menu</a>
-                <a href="#" className='text-gray-600 hover:text-gray-800'>Offers</a>
-                <a href="#" className='text-gray-600 hover:text-gray-800'>About us</a>
-                <a href="#" className='text-gray-600 hover:text-gray-800'>Contact</a>
+                <a href="#menu" className='hover:text-muted'>Menu</a>
+                <a href="#offers" className='hover:text-muted'>Offers</a>
+                <a href="#about" className='hover:text-muted'>About</a>
+                <a href="#footer" className='hover:text-muted'>Contact</a>
             </nav>
-            <button className='bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600'>
-                Make A reservation
-            </button>
+            <a href='#reservation'>
+                <button className='bg-primary text-fg px-4 py-2 rounded hover:bg-secondary cursor-pointer'>
+                  Make A reservation
+              </button>
+            </a>
+            
+            <button className="cursor-pointer" 
+              onClick={toggleDark}>
+                  <i className={`fas ${isDarkMode ? 'fa-sun' : 'fa-moon'}`}></i>
+              </button>
         </div> 
+        
           {/* Mobile Navigation */}
       {isMenuOpen && (
         <>
@@ -45,29 +59,37 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
 
           {/* Sidebar (Mobile Menu) */}
           <div 
-            className='md:hidden absolute top-0 left-0 h-full w-1/2 bg-white 
+            className='md:hidden absolute top-0 left-0 h-full w-1/2 bg-bg text-fg
             shadow-lg rounded-lg p-4 z-20 flex flex-col items-center'>
-            <div className='w-full flex flex-col items-center space-x-3 mb-4 header-logo-line'>
+            <div className='w-full flex flex-col items-center space-x-3 mb-4 header-logo-line bg-bg'>
                 <img src={logo} alt="Healthy Corner Logo" 
                 className='h-20 w-20 object-contain'
                 />
-                <h1 className='text-2xl font-bold text-gray-800'>Healthy Corner</h1>
+                <h1 className='text-2xl font-bold'>Healthy Corner</h1>
             </div>
             <nav className='w-full flex flex-col justify-center items-center space-y-4 mb-4 header-logo-line'>   
-              <a href="#" className='text-gray-600 hover:text-gray-800'>Menu</a>
-              <a href="#" className='text-gray-600 hover:text-gray-800'>Offers</a>
-              <a href="#" className='text-gray-600 hover:text-gray-800'>About us</a>
-              <a href="#" className='text-gray-600 hover:text-gray-800'>Contact</a>
+                <a onClick={toggleMenu} href="#menu" className='hover:text-muted'>Menu</a>
+                <a onClick={toggleMenu} href="#offers" className='hover:text-muted'>Offers</a>
+                <a onClick={toggleMenu} href="#about" className='hover:text-muted'>About</a>
+                <a onClick={toggleMenu} href="#footer" className='hover:text-muted'>Contact</a>
             </nav>
-            <button className='flex justify-center items-center bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600'>
-                Make A reservation
+            <a href='#reservation' onClick={toggleMenu}>
+                <button className='bg-primary text-fg px-4 py-2 rounded hover:bg-secondary cursor-pointer'>
+                  Make A reservation
+              </button>
+            </a>
+
+             <button className="mt-6 cursor-pointer" 
+              onClick={toggleDark}>
+                  <i className={`fas ${isDarkMode ? 'fa-sun' : 'fa-moon'}`}></i>
               </button>
           </div>
         </>
       )}
-       
+      
     </header>
   )
 }
+
 
 export default Header;

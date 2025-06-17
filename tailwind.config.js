@@ -1,21 +1,19 @@
 // /** @type {import('tailwindcss').Config} */
 // module.exports = {
 //   content: [
-//     "./index.html",
-//     "./src/**/*.{js,ts,jsx,tsx}",
-//   ],
+//     './index.html',
+//     './src/**/*.{js,ts,jsx,tsx}',
+//     './**/*.html',
+//   ], 
 //   theme: {
 //     extend: {
-//       keyframes: {
-//         shake: {
-//           '10%, 90%': { transform: 'translateX(-2px)' },
-//           '20%, 80%': { transform: 'translateX(4px)' },
-//           '30%, 50%, 70%': { transform: 'translateX(-8px)' },
-//           '40%, 60%': { transform: 'translateX(8px)' },
+//       colors: {
+//         primary: '#4f46e5',
+//         secondary: '#14b8a6',
+//         brand: {
+//           DEFAULT: '#6366f1',
+//           dark: '#4338ca',
 //         },
-//       },
-//       animation: {
-//         shake: 'shake 0.8s cubic-bezier(.36,.07,.19,.97) both',
 //       },
 //     },
 //   },

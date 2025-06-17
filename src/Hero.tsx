@@ -6,7 +6,7 @@ function Hero() {
 
   return (
     <div id='hero' className='p-8 bg-beige-100'>
-      <div className="relative">
+      <div className="relative">  
         <img 
           src={heroImg} 
           className="w-full h-full object-cover rounded-xl object-contain md:max-h-[70vh]" 
