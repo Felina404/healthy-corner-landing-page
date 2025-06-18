@@ -34,7 +34,7 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className='selection:bg-secondary'>
         <Header isDarkMode={isDarkMode} toggleDark={toggleDark}/>
         <Hero />
         <main>

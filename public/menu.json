@@ -523,7 +523,7 @@
         "image": "src/assets/salads/salmon_soyBeans.jpg",
         "description": "A unique salad inspired by sushi, with fresh fish, vegetables, and a tangy dressing.",
         "category": "salads",
-        "rating": 4.7
+        "rating": 4
     },
     {
         "id": 35,
@@ -718,7 +718,7 @@
         "image": "src/assets/yogurtBowls/blackberries_blueberries_coconut.jpg",
         "description": "A nutritious yogurt bowl topped with blackberries, blueberries, coconut, and chia seeds, perfect for a healthy breakfast.",
         "category": "yogurt bowls",
-        "rating": 4.5
+        "rating": 4
     },
      {
         "id": 48,
@@ -778,7 +778,7 @@
         "image": "src/assets/yogurtBowls/spirulina_banana.jpg",
         "description": "A nutritious yogurt bowl topped with spirulina and banana, perfect for a healthy snack.",
         "category": "yogurt bowls",
-        "rating": 4.7
+        "rating": 4
     },
     {
         "id": 52,
