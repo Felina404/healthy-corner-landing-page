@@ -1,19 +1,79 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef, useMemo} from 'react'
 import Pagination from './Pagination';
+import MenuCard from './MenuCard';
+
+
+interface MenuItem {
+  id: number;
+  name: string;
+  image: string;
+  description: string;
+  price: number;
+  rating: number;
+  category: string;
+  macros: {
+    calories: number;
+    carbs: number;
+    protein: number;
+    fat: number;
+  };
+}
+
+interface Offer {
+  id: number;
+  name: string;
+  images: string[];
+}
+
+interface Category {
+  id: number;
+  name: string;
+  image: string;
+}
 
 function Menu() {
-  const [menu, setMenu] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const [menu, setMenu] = useState<MenuItem[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [activeCategory, setActiveCategory] = useState("");
-  const [activeMenu, setActiveMenu] = useState([]);
-  const [page, setPage] = useState(1);
+  // const [activeMenu, setActiveMenu] = useState<MenuItem[]>([]); 
+  const [page, setPage] = useState(1); 
   const [offersInView, setOffersInView] = useState<boolean[]>([]);
-  const [offers, setOffers] = useState([]);
+  const [offers, setOffers] = useState<Offer[]>([]);
+
 
   const menuRef = useRef<HTMLDivElement>(null);
   const offerRefs = useRef<(HTMLDivElement | null)[]>([]);
 
+  const itemsPerPage = 6; 
 
+    const activeMenu = useMemo(() => {
+      if (!activeCategory) return menu;
+      return menu.filter(item => item.category.toLowerCase() === activeCategory.toLowerCase());
+    }, [activeCategory, menu]);
+
+      const currentItems = useMemo(() => {
+      const lastIndex = page * itemsPerPage;
+      const firstIndex = lastIndex - itemsPerPage;
+      return activeMenu.slice(firstIndex, lastIndex);
+  }, [activeMenu, page, itemsPerPage]);
+
+  useEffect(() => {
+  if (!categories.length) return;
+
+  categories.forEach(cat => {
+    const img = new Image();
+    img.src = cat.image;
+  });
+}, [categories]);
+
+  useEffect(() => {
+  if (!menu.length) return;
+
+  menu.forEach(item => {
+    const img = new Image();
+    img.src = item.image;
+  });
+}, [menu]);
 
   useEffect(() => {
     fetch('/menu.json')
@@ -33,15 +93,15 @@ function Menu() {
     .then((data) => setOffers(data));
   },[]);
 
-  useEffect(() => {
-    if (!activeCategory) {
-      setActiveMenu(menu);
-    } else {
-      let tmp =  menu.filter((item:any) => item.category.toLowerCase() === activeCategory.toLowerCase());
-      setActiveMenu(tmp);
-    }
+  // useEffect(() => {
+  //   if (!activeCategory) {
+  //     setActiveMenu(menu);
+  //   } else {
+  //     let tmp =  menu.filter((item:any) => item.category.toLowerCase() === activeCategory.toLowerCase());
+  //     setActiveMenu(tmp);
+  //   }
     
-  }, [activeCategory, menu])
+  // }, [activeCategory, menu])
 
   useEffect(() => {
     setPage(1);
@@ -54,37 +114,64 @@ function Menu() {
   }, [page]);
 
   useEffect(() => {
-    const observers: IntersectionObserver[] = [];
+  if (offers.length > 0) {
+    setOffersInView(new Array(offers.length).fill(false));
+  }
+}, [offers]);
 
-    offerRefs.current.forEach((ref, idx) => {
-      if (!ref) return;
-      const observer = new window.IntersectionObserver(
-        ([entry]) => {
-          setOffersInView((prev) => {
-            const updated = [...prev];
-            updated[idx] = entry.isIntersecting;
-            return updated;
-          });
-        },
-        { threshold: 0.7 }
-      );
-      observer.observe(ref);
-      observers.push(observer);
+let debounceTimeout: NodeJS.Timeout | null = null;
+
+const observerCallback = (idx: number, isVisible: boolean) => {
+  if (debounceTimeout) clearTimeout(debounceTimeout);
+
+  debounceTimeout = setTimeout(() => {
+    setOffersInView((prev) => {
+      if (prev[idx] === isVisible) return prev; 
+      const updated = [...prev];
+      updated[idx] = isVisible;
+      return updated;
     });
+  }, 100); 
+};
 
-    return () => {
-      observers.forEach((observer) => observer.disconnect());
-    };
-  }, [offers]);
+
+useEffect(() => {
+  if (!offers.length) return;
+
+  setOffersInView(new Array(offers.length).fill(false));
+
+  const observers: IntersectionObserver[] = [];
+
+  offerRefs.current.forEach((ref, idx) => {
+    if (!ref) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setOffersInView(prev => {
+          if (prev[idx] === entry.isIntersecting) return prev;
+          const updated = [...prev];
+          updated[idx] = entry.isIntersecting;
+          return updated;
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    observer.observe(ref);
+    observers.push(observer);
+  });
+
+  return () => observers.forEach(o => o.disconnect());
+}, [offers]);
  
 
 
   const topRated = menu.filter((item:any) => item.rating >=4.5);
 
-    const itemsPerPage = 6;
+    // const itemsPerPage = 6;
     const lastIndex = page * itemsPerPage;
     const firstIndex = lastIndex - itemsPerPage;
-    const currentItems = activeMenu.slice(firstIndex, lastIndex);
+    // const currentItems = activeMenu.slice(firstIndex, lastIndex);
 
   return (
     <div  className='flex flex-col items-center justify-center text-fg bg-bg'>    
@@ -97,7 +184,7 @@ function Menu() {
                 key={item.id}
                 className="flex flex-col items-center justify-center w-full max-w-sm h-[400px] p-4 rounded-lg">
                 <h3 className="w-full text-center text-xl font-semibold mb-2 min-h-[3rem]">{item.name}</h3>
-                <img src={item.image}alt={item.name} className="w-32 h-32 object-cover rounded-2xl mb-2"/>
+                <img src={item.image}alt={item.name} className="w-32 h-32 object-cover rounded-2xl mb-2" loading='lazy'/>
                 <p className="text-fg text-left w-full min-h-[4rem]">{item.description}</p>
                 <span className="text-primary font-bold">${item.price}</span>
               </div>
@@ -114,7 +201,8 @@ function Menu() {
                   className={`flex flex-col items-center focus:outline-none} cursor-pointer hover:text-muted hover:underline ${activeCategory === "" ? 'text-muted' : 'text-fg'}`}
                 >
                   <img
-                    src='src/assets/header-logo.png' 
+                    loading='lazy'
+                    src='src/assets/header-logo.webp' 
                     alt= "All Categories"
                     className='w-24 h-24 object-cover rounded-full mb-2'
                   />
@@ -126,6 +214,7 @@ function Menu() {
                   className={`flex flex-col items-center focus:outline-none} cursor-pointer hover:text-muted hover:underline ${activeCategory === category.name ? 'text-muted' : 'text-fg'}`}
                 >
                   <img
+                    loading='lazy'
                     src={category.image}
                     alt={category.name}
                     className='w-24 h-24 object-cover rounded-full mb-2'
@@ -136,26 +225,11 @@ function Menu() {
             </div> 
            
            <div ref={menuRef}  className='mt-2 flex flex-col md:flex-row  justify-center flex-wrap'>
-                {currentItems.map((item: any) => (
-               <div
-                key={item.id}
-                className="relative group flex flex-col items-center justify-center w-full max-w-sm h-[400px] p-4 rounded-lg">
-                <h3 className="w-full text-center text-xl font-semibold mb-2 min-h-[3rem]">{item.name}</h3>
-                <img src={item.image} alt={item.name} className="w-32 h-32 object-cover rounded-2xl mb-2"/>
-                <p className="text-fg text-left w-full min-h-[4rem]">{item.description}</p>
-                <span className="text-primary font-bold">${item.price}</span>
-                <div className='flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity mt-2'>
-                 <div className='text-fg font-semibold text-sm'>
-                  <div>Calories: {item.macros.calories}</div>
-                  <div>Carbs: {item.macros.carbs}</div>
-                  <div>Protein: {item.macros.protein}</div>
-                  <div>Fat: {item.macros.fat}</div>
-                  </div>
-                  </div>
-              </div>
-        ))}
-       
-           </div>     
+                {currentItems.map((item) => (
+                  <MenuCard key={item.id} item={item} />
+                ))}      
+           </div>  
+
            <Pagination itemsPerPage={itemsPerPage} totalItems = {activeMenu.length} page={page} setPage={setPage}/>
            </div>      
 
@@ -172,6 +246,7 @@ function Menu() {
                
                 {offer.images.map((image: string, index: number) => (
                   <img
+                    loading='lazy'
                     key={index}
                     src={image}
                     alt={offer.name}
@@ -179,7 +254,7 @@ function Menu() {
                       w-32 h-32 object-cover rounded-lg mb-2
                       transition-all duration-900 ease-out
                       opacity-0
-                      ${offersInView[i] ? 'opacity-100 translate-x-0' : index % 2 === 0 ? '-translate-x-32' : 'translate-x-32'}
+                      ${offersInView[i] ? `opacity-100 ${index % 2 === 0 ? 'translate-x-0' : 'translate-x-0'}` : index % 2 === 0 ? '-translate-x-32' : 'translate-x-32'}
                     `}
                   />
                 ))}

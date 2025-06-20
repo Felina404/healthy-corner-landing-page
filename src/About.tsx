@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import AboutImg from './assets/general.jpg'
+import AboutImg from './assets/general.webp'
 
 function About() {
 

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import heroImg from './assets/hero-img.jpg'
+import heroImg from './assets/hero-img.webp'
 
 function Hero() {
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import restaurant from './assets/restaurant.jpg'
+import restaurant from './assets/restaurant.webp'
 
 function Reservation() {
 

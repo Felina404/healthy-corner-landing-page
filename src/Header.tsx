@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
-import logo from './assets/header-logo.png';
+import logo from './assets/header-logo.webp';
 
 interface HeaderProps {
   isDarkMode: boolean
