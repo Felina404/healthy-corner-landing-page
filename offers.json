@@ -1,0 +1,37 @@
+// [
+//     {
+//         "id": 1,
+//         "name": "2 + 1 Yogurt Bowls",
+//          "images" : [
+//             "src/assets/yogurtBowls/berries_coconut_cherry.webp",
+//             "src/assets/yogurtBowls/spirulina_banana.webp",
+//             "src/assets/yogurtBowls/kiwi_cocoa_blueberries.webp"
+//          ]
+//     },
+//       {
+//         "id": 2,
+//         "name": "2 Salads + 1 Smoothie",
+//          "images" : [
+//             "src/assets/salads/cherry_tomatoes.webp",
+//             "src/assets/salads/salmon_soyBeans.webp",
+//             "src/assets/smoothies/kale.webp"
+//          ]
+//     },
+//       {
+//         "id": 3,
+//         "name": "After 13:00: 1 Breakfast + 1 Smoothie",
+//          "images" : [
+//             "src/assets/breakfast/poached_eggs_salmon.webp",
+//             "src/assets/smoothies/strawberry.webp"
+//          ]
+//     },
+//       {
+//         "id": 4,
+//         "name": "Every Thursday: 1 Dinner + 1 Dessert",
+//          "images" : [
+//             "src/assets/dinner/fish_roasted_veggies.webp",
+//             "src/assets/desserts/tarts.webp"
+//          ]
+//     }
+
+// ]

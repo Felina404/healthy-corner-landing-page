@@ -1,4 +1,7 @@
-[
+import { getImageUrl } from '../utils/imageLoader';
+
+const menu = [
+    
     {
         "id": 1,
         "name": "Lobster Bite",
@@ -9,7 +12,7 @@
             "fat": 5
         },
         "price": 30,
-        "image": "src/assets/appetizers/lobster_bite.webp",
+        "image":getImageUrl('appetizers', 'lobster_bite.webp'),
         "description": "A delicious bite-sized lobster appetizer, perfect for seafood lovers.",
         "category": "appetizers",
         "rating": 4
@@ -25,7 +28,7 @@
             "fat": 30
         },
         "price": 15,
-        "image": "src/assets/appetizers/sardines_soup.webp",
+        "image":getImageUrl('appetizers', 'sardines_soup.webp'),
         "description": "A hearty soup made with fresh sardines, perfect for a light meal.",
         "category": "appetizers",
         "rating": 4
@@ -40,7 +43,7 @@
             "fat": 5
         },
         "price": 20,
-        "image": "src/assets/appetizers/scallops.webp",
+        "image":getImageUrl('appetizers', 'scallops.webp'),
         "description": "Tender scallops seared to perfection, served with a lemon butter sauce.",
         "category": "appetizers",
         "rating": 4
@@ -55,7 +58,7 @@
             "fat": 15
         },
         "price": 15,
-        "image": "src/assets/breakfast/avocado_boiled_eggs_toast.webp",
+        "image":getImageUrl('breakfast', 'avocado_boiled_eggs_toast.webp'),
         "description": "A healthy breakfast option with creamy avocado and perfectly boiled eggs on toast.",
         "category": "breakfast",
         "rating": 4
@@ -70,7 +73,7 @@
             "fat": 25
         },
         "price": 15,
-        "image": "src/assets/breakfast/eggs_avocado_arugula.webp",
+        "image":getImageUrl('breakfast', 'eggs_avocado_arugula.webp'),
         "description": "A nutritious breakfast bowl with avocado, eggs, hummus, and fresh arugula.",
         "category": "breakfast",
         "rating": 4
@@ -85,7 +88,7 @@
             "fat": 30
         },
         "price": 25,
-        "image": "src/assets/breakfast/poached_eggs_salmon.webp",
+        "image":getImageUrl('breakfast', 'poached_eggs_salmon.webp'),
         "description": "A luxurious breakfast of poached eggs served with smoked salmon on a bed of greens.",
         "category": "breakfast",
         "rating": 4.5
@@ -100,7 +103,7 @@
             "fat": 25
         },
         "price": 20,
-        "image": "src/assets/breakfast/scrumbled_eggs_avocado_arugula.webp",
+        "image":getImageUrl('breakfast', 'scrumbled_eggs_avocado_arugula.webp'),
         "description": "A hearty breakfast of scrambled eggs with avocado and arugula.",
         "category": "breakfast",
         "rating": 4
@@ -115,12 +118,12 @@
             "fat": 20
         },
         "price": 15,
-        "image": "src/assets/breakfast/scrumbled_eggs_avocado_eggs.webp",
+        "image":getImageUrl('breakfast', 'scrumbled_eggs_avocado_eggs.webp'),
         "description": "A delicious breakfast of scrambled eggs served on avocado toast.",
         "category": "breakfast",
         "rating": 4.3
     },
-     {
+     {   
         "id": 9,
         "name": "Cream Chesse Strawberries with dark chocolate",
         "macros" : {
@@ -130,7 +133,7 @@
             "fat": 25
         },
         "price": 15,
-        "image": "src/assets/desserts/cream_cheese_fruits.webp",
+        "image":getImageUrl('desserts', 'cream_cheese_fruits.webp'),
         "description": "A delightful dessert of cream cheese topped with fresh strawberries and drizzled with dark chocolate.",
         "category": "desserts",
         "rating": 4
@@ -145,7 +148,7 @@
             "fat": 25
         },
         "price": 12,
-        "image": "src/assets/desserts/cupcakes.webp",
+        "image":getImageUrl('desserts', 'cupcakes.webp'),
         "description": "A rich and creamy low-carb cheesecake, perfect for satisfying your sweet tooth without the guilt.",
         "category": "desserts",
         "rating": 4
@@ -160,7 +163,7 @@
             "fat": 15
         },
         "price": 12,
-        "image": "src/assets/desserts/tarts.webp",
+        "image":getImageUrl('desserts', 'tarts.webp'),
         "description": "Delicious low-carb tarts filled with a variety of flavors, perfect for a light dessert.",
         "category": "desserts",
         "rating": 4
@@ -175,7 +178,7 @@
             "fat": 20
         },
         "price": 15,
-        "image": "src/assets/salads/beef_avocado.webp",
+        "image":getImageUrl('salads', 'beef_avocado.webp'),
         "description": "A refreshing salad with tender beef slices, creamy avocado, and a light dressing.",
         "category": "dinner",
         "rating": 4
@@ -190,7 +193,7 @@
             "fat": 25
         },
         "price": 15,
-        "image": "src/assets/dinner/beef_peppers.webp",
+        "image":getImageUrl('dinner', 'beef_peppers.webp'),
         "description": "Juicy beef souvlaki skewers served with grilled peppers and a side of tzatziki sauce.",
         "category": "dinner",
         "rating": 4
@@ -205,7 +208,7 @@
             "fat": 10
         },
         "price": 20,
-        "image": "src/assets/dinner/chicken_roasted_veggies.webp",
+        "image":getImageUrl('dinner', 'chicken_roasted_veggies.webp'),
         "description": "A wholesome dish of grilled chicken served with roasted vegetables and a creamy sweet potato puree.",
         "category": "dinner",
         "rating": 4
@@ -220,7 +223,7 @@
             "fat": 10
         },
         "price": 20,
-        "image": "src/assets/dinner/fish_roasted_veggies_puree.webp",
+        "image":getImageUrl('dinner', 'fish_roasted_veggies_puree.webp'),
         "description": "A light and healthy dish of roasted fish served with seasonal vegetables and a smooth cauliflower puree.",
         "category": "dinner",
         "rating": 4.4
@@ -235,7 +238,7 @@
             "fat": 10
         },
         "price": 20,
-        "image": "src/assets/dinner/fish_roasted_veggies.webp",
+        "image":getImageUrl('dinner', 'fish_roasted_veggies.webp'),
         "description": "A flavorful dish of fish served with a medley of roasted vegetables, perfect for a healthy dinner.",
         "category": "dinner",
         "rating": 4
@@ -250,7 +253,7 @@
             "fat": 10
         },
         "price": 20,
-        "image": "src/assets/dinner/grilled_chicken_veggies.webp",
+        "image":getImageUrl('dinner', 'grilled_chicken_veggies.webp'),
         "description": "A simple yet delicious dish of grilled chicken served with a side of fresh vegetables.",
         "category": "dinner",
         "rating": 4
@@ -265,7 +268,7 @@
             "fat": 10
         },
         "price": 20,
-        "image": "src/assets/dinner/hallumi_veggies.webp",
+        "image":getImageUrl('dinner', 'hallumi_veggies.webp'),
         "description": "A vegetarian delight of grilled halloumi cheese served with a variety of roasted vegetables.",
         "category": "dinner",
         "rating": 3.6
@@ -280,7 +283,7 @@
             "fat": 25
         },
         "price": 20,
-        "image": "src/assets/dinner/hallumi_veggies.webp",
+        "image":getImageUrl('dinner', 'hallumi_veggies.webp'),
         "description": "A hearty dish of pork served with a side of roasted vegetables, perfect for meat lovers.",
         "category": "dinner",
         "rating": 4
@@ -295,7 +298,7 @@
             "fat": 20
         },
         "price": 30,
-        "image": "src/assets/dinner/salmon_avocado_veggies.webp",
+        "image":getImageUrl('dinner', 'salmon_avocado_veggies.webp'),
         "description": "A nutritious dish of salmon served with fresh vegetables.",
         "category": "dinner",
         "rating": 4.5
@@ -310,7 +313,7 @@
             "fat": 25
         },
         "price": 30,
-        "image": "src/assets/dinner/salmon_avocado.webp",
+        "image":getImageUrl('dinner', 'salmon_avocado.webp'),
         "description": "A delicious dish of salmon served with a side of vegetables and creamy avocado.",
         "category": "dinner",
         "rating": 4
@@ -325,7 +328,7 @@
             "fat": 25
         },
         "price": 30,
-        "image": "src/assets/dinner/salmon_roasted_veggies.webp",
+        "image":getImageUrl('dinner', 'salmon_roasted_veggies.webp'),
         "description": "A flavorful dish of salmon served with a side of roasted vegetables, perfect for a healthy dinner.",
         "category": "dinner",
         "rating": 4
@@ -340,7 +343,7 @@
             "fat": 15
         },
         "price": 30,
-        "image": "src/assets/dinner/salmon_veggies.webp",
+        "image":getImageUrl('dinner', 'salmon_veggies.webp'),
         "description": "A comforting dish of salmon served with fresh vegetables and creamy mashed potatoes.",
         "category": "dinner",
         "rating": 4
@@ -355,7 +358,7 @@
             "fat": 20
         },
         "price": 30,
-        "image": "src/assets/dinner/salmon_zucchini.webp",
+        "image":getImageUrl('dinner', 'salmon_zucchini.webp'),
         "description": "A light and healthy dish of salmon served with zucchini and a tangy Greek yogurt sauce.",
         "category": "dinner",
         "rating": 4
@@ -370,7 +373,7 @@
             "fat": 20
         },
         "price": 30,
-        "image": "src/assets/dinner/salmon_zucchini.webp",
+        "image":getImageUrl('dinner', 'salmon_zucchini.webp'),
         "description": "A light and healthy dish of salmon served with zucchini and a tangy Greek yogurt sauce.",
         "category": "dinner",
         "rating": 4
@@ -385,7 +388,7 @@
             "fat": 13
         },
         "price": 15,
-        "image": "src/assets/salads/avocado_cheekpeas.webp",
+        "image":getImageUrl('salads', 'avocado_cheekpeas.webp'),
         "description": "A refreshing salad with creamy avocado and protein-packed chickpeas, perfect for a light meal.",
         "category": "salads",
         "rating": 3
@@ -400,7 +403,7 @@
             "fat": 5
         },
         "price": 10,
-        "image": "src/assets/salads/cherry_tomatoes.webp",
+        "image":getImageUrl('salads', 'cherry_tomatoes.webp'),
         "description": "A simple and fresh salad made with ripe cherry tomatoes, perfect as a side dish.",
         "category": "salads",
         "rating": 4
@@ -415,7 +418,7 @@
             "fat": 20
         },
         "price": 25,
-        "image": "src/assets/salads/chicken_egg_veggies.webp",
+        "image":getImageUrl('salads', 'chicken_egg_veggies.webp'),
         "description": "A protein-packed salad with tender chicken, edamame, and hard-boiled eggs, perfect for a filling meal.",
         "category": "salads",
         "rating": 4
@@ -430,7 +433,7 @@
             "fat": 15
         },
         "price": 25,
-        "image": "src/assets/salads/chicken_tomatoes.webp",
+        "image":getImageUrl('salads', 'chicken_tomatoes.webp'),
         "description": "A hearty salad with grilled chicken, rice, and fresh vegetables, perfect for a satisfying meal.",
         "category": "salads",
         "rating": 4
@@ -445,7 +448,7 @@
             "fat": 5
         },
         "price": 15,
-        "image": "src/assets/salads/cucumber_soyBeans.webp",
+        "image":getImageUrl('salads', 'cucumber_soyBeans.webp'),
         "description": "A light and refreshing salad with cucumbers, zucchini, and edamame, perfect for a healthy side.",
         "category": "salads",
         "rating": 4
@@ -460,7 +463,7 @@
             "fat": 10
         },
         "price": 15,
-        "image": "src/assets/salads/kale_eggs.webp",
+        "image":getImageUrl('salads', 'kale_eggs.webp'),
         "description": "A nutritious salad with kale, hard-boiled eggs, and cherry tomatoes, perfect for a light lunch.",
         "category": "salads",
         "rating": 4
@@ -475,7 +478,7 @@
             "fat": 3
         },
         "price": 15,
-        "image": "src/assets/salads/kale_pomegranate.webp",
+        "image":getImageUrl('salads', 'kale_pomegranate.webp'), 
         "description": "A vibrant salad with kale, sweet apples, and tart pomegranate seeds, perfect for a refreshing side.",
         "category": "salads",
         "rating": 4
@@ -490,7 +493,7 @@
             "fat": 3
         },
         "price": 15,
-        "image": "src/assets/salads/raw_veggies.webp",
+        "image":getImageUrl('salads', 'raw_veggies.webp'),  
         "description": "A colorful salad made with a variety of raw vegetables, perfect for a healthy and crunchy side dish.",
         "category": "salads",
         "rating": 3.5
@@ -505,7 +508,7 @@
             "fat": 20
         },
         "price": 30,
-        "image": "src/assets/salads/salmon_soyBeans_carrot.webp",
+        "image":getImageUrl('salads', 'salmon_soyBeans_carrot.webp'), 
         "description": "A delicious salad with salmon, edamame, cashews, and fresh vegetables, perfect for a nutritious meal.",
         "category": "salads",
         "rating": 4
@@ -520,7 +523,7 @@
             "fat": 20
         },
         "price": 35,
-        "image": "src/assets/salads/salmon_soyBeans.webp",
+        "image":getImageUrl('salads', 'salmon_soyBeans.webp'), 
         "description": "A unique salad inspired by sushi, with fresh fish, vegetables, and a tangy dressing.",
         "category": "salads",
         "rating": 4
@@ -535,7 +538,7 @@
             "fat": 20
         },
         "price": 30,
-        "image": "src/assets/salads/shrimp.webp",
+        "image":getImageUrl('salads', 'shrimp.webp'), 
         "description": "A light and refreshing salad with succulent shrimp, fresh vegetables, and a zesty dressing.",
         "category": "salads",
         "rating": 4
@@ -550,7 +553,7 @@
             "fat": 4
         },
         "price": 25,
-        "image": "src/assets/smoothies/blackberries_coconut.webp",
+        "image":getImageUrl('smoothies', 'blackberries_coconut.webp'), 
         "description": "A refreshing smoothie made with blackberries and coconut, perfect for a healthy snack.",
         "category": "smoothies",
         "rating": 4
@@ -565,7 +568,7 @@
             "fat": 3
         },
         "price": 15,
-        "image": "src/assets/smoothies/kale.webp",
+        "image":getImageUrl('smoothies', 'kale.webp'), 
         "description": "A nutritious smoothie packed with kale and greens, perfect for a healthy boost.",
         "category": "smoothies",
         "rating": 4
@@ -580,7 +583,7 @@
             "fat": 3
         },
         "price": 15,
-        "image": "src/assets/smoothies/pineaple_mango.webp",
+        "image":getImageUrl('smoothies', 'pineaple_mango.webp'), 
         "description": "A tropical smoothie made with pineapple and mango, perfect for a refreshing treat.",
         "category": "smoothies",
         "rating": 4
@@ -595,7 +598,7 @@
             "fat": 3
         },
         "price": 15,
-        "image": "src/assets/smoothies/pineaple_strawberry.webp",
+        "image":getImageUrl('smoothies', 'pineaple_strawberry.webp'), 
         "description": "A delicious smoothie made with pineapple and strawberries, perfect for a fruity refreshment.",
         "category": "smoothies",
         "rating": 4
@@ -610,7 +613,7 @@
             "fat": 3
         },
         "price": 15,
-        "image": "src/assets/smoothies/rasberries_bstrawberries_lime.webp",
+        "image":getImageUrl('smoothies', 'rasberries_bstrawberries_lime.webp'), 
         "description": "A tangy and refreshing smoothie made with raspberries, strawberries, and lime, perfect for a summer treat.",
         "category": "smoothies",
         "rating": 4
@@ -625,7 +628,7 @@
             "fat": 3
         },
         "price": 15,
-        "image": "src/assets/smoothies/rasberries_strawberry.webp",
+        "image":getImageUrl('smoothies', 'rasberries_strawberry.webp'), 
         "description": "A sweet and tangy smoothie made with raspberries and strawberries, perfect for a healthy snack.",
         "category": "smoothies",
         "rating": 4.4
@@ -640,7 +643,7 @@
             "fat": 3
         },
         "price": 15,
-        "image": "src/assets/smoothies/rasberries.webp",
+        "image":getImageUrl('smoothies', 'rasberries.webp'), 
         "description": "A delicious smoothie made with a mix of berries, perfect for a refreshing and healthy drink.",
         "category": "smoothies",
         "rating": 4
@@ -655,7 +658,7 @@
             "fat": 10
         },
         "price": 15,
-        "image": "src/assets/smoothies/strawberry.webp",
+        "image":getImageUrl('smoothies', 'strawberry.webp'), 
         "description": "A creamy smoothie made with strawberries and coconut, perfect for a tropical treat.",
         "category": "smoothies",
         "rating": 4.7
@@ -670,7 +673,7 @@
             "fat": 25
         },
         "price": 25,
-        "image": "src/assets/yogurtBowls/banana_blueberries_cashew.webp",
+        "image":getImageUrl('yogurtBowls', 'banana_blueberries_cashew.webp'), 
         "description": "A delicious yogurt bowl topped with banana, pistachios, blueberries, and cashews, perfect for a healthy breakfast.",
         "category": "yogurt bowls",
         "rating": 4
@@ -685,7 +688,7 @@
             "fat": 25
         },
         "price": 25,
-        "image": "src/assets/yogurtBowls/berries_banana_almonds.webp",
+        "image":getImageUrl('yogurtBowls', 'berries_banana_almonds.webp'), 
         "description": "A nutritious yogurt bowl topped with mixed berries, banana, and almonds, perfect for a healthy snack.",
         "category": "yogurt bowls",
         "rating": 4
@@ -700,7 +703,7 @@
             "fat": 25
         },
         "price": 25,
-        "image": "src/assets/yogurtBowls/berries_coconut_cherry.webp",
+        "image":getImageUrl('yogurtBowls', 'berries_coconut_cherry.webp'), 
         "description": "A tropical yogurt bowl topped with berries, coconut, and cherries, perfect for a refreshing treat.",
         "category": "yogurt bowls",
         "rating": 4
@@ -715,7 +718,7 @@
             "fat": 25
         },
         "price": 25,
-        "image": "src/assets/yogurtBowls/blackberries_blueberries_coconut.webp",
+        "image":getImageUrl('yogurtBowls', 'blackberries_blueberries_coconut.webp'), 
         "description": "A nutritious yogurt bowl topped with blackberries, blueberries, coconut, and chia seeds, perfect for a healthy breakfast.",
         "category": "yogurt bowls",
         "rating": 4
@@ -730,7 +733,7 @@
             "fat": 25
         },
         "price": 25,
-        "image": "src/assets/yogurtBowls/dragonfruit_banana_coconut.webp",
+        "image":getImageUrl('yogurtBowls', 'dragonfruit_banana_coconut.webp'), 
         "description": "A vibrant yogurt bowl topped with dragonfruit, coconut, and banana, perfect for a tropical breakfast.",
         "category": "yogurt bowls",
         "rating": 5
@@ -745,7 +748,7 @@
             "fat": 25
         },
         "price": 20,
-        "image": "src/assets/yogurtBowls/kiwi_cocoa_blueberries.webp",
+        "image":getImageUrl('yogurtBowls', 'kiwi_cocoa_blueberries.webp'), 
         "description": "A delicious yogurt bowl topped with kiwi, blueberries, and a sprinkle of cocoa, perfect for a healthy snack.",
         "category": "yogurt bowls",
         "rating": 4
@@ -760,7 +763,7 @@
             "fat": 25
         },
         "price": 30,
-        "image": "src/assets/yogurtBowls/matcha_coconut_banana.webp",
+        "image":getImageUrl('yogurtBowls', 'matcha_coconut_banana.webp'),   
         "description": "A refreshing yogurt bowl topped with matcha, coconut, and banana, perfect for a healthy breakfast.",
         "category": "yogurt bowls",
         "rating": 4
@@ -775,7 +778,7 @@
             "fat": 15
         },
         "price": 30,
-        "image": "src/assets/yogurtBowls/spirulina_banana.webp",
+        "image":getImageUrl('yogurtBowls', 'spirulina_banana.webp'), 
         "description": "A nutritious yogurt bowl topped with spirulina and banana, perfect for a healthy snack.",
         "category": "yogurt bowls",
         "rating": 4
@@ -789,8 +792,8 @@
             "protein": 20,
             "fat": 15
         },
-        "price": 30,
-        "image": "src/assets/yogurtBowls/strawberries_chia_goji.webp",
+        "price": 30,    
+        "image":getImageUrl('yogurtBowls', 'strawberries_chia_goji.webp'), 
         "description": "A delicious yogurt bowl topped with strawberries, chia seeds, and goji berries, perfect for a healthy breakfast.",
         "category": "yogurt bowls",
         "rating": 4
@@ -805,9 +808,11 @@
             "fat": 15
         },
         "price": 25,
-        "image": "src/assets/yogurtBowls/strawberry_banana_rasberries.webp",
+        "image":getImageUrl('yogurtBowls', 'strawberry_banana_rasberries.webp'), 
         "description": "A fruity yogurt bowl topped with strawberries, banana, raspberries, and chia seeds, perfect for a refreshing snack.",
         "category": "yogurt bowls",
         "rating": 4
-    }
+    }           
 ]
+
+export default menu;

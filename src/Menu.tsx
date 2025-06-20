@@ -1,6 +1,9 @@
 import { useEffect, useState, useRef, useMemo} from 'react'
 import Pagination from './Pagination';
 import MenuCard from './MenuCard';
+import menuData from './data/menuData';
+import offersData from './data/offers';
+import categoriesData from './data/categoriesData';
 
 
 interface MenuItem {
@@ -76,21 +79,24 @@ function Menu() {
 }, [menu]);
 
   useEffect(() => {
-    fetch('/menu.json')
-    .then((res) => res.json())
-    .then((data) => setMenu(data)); 
+    // fetch('/menu.json')
+    // .then((res) => res.json())
+    // .then((data) => setMenu(data)); 
+    setMenu(menuData);
   },[]);
 
    useEffect(() => {
-    fetch('/categories.json')
-    .then((res) => res.json())
-    .then((data) => setCategories(data)); 
+    // fetch('/categories.json')
+    // .then((res) => res.json())
+    // .then((data) => setCategories(data)); 
+    setCategories(categoriesData);
   },[]);
 
    useEffect(() => {
-    fetch('/offers.json')
-    .then((res) => res.json())
-    .then((data) => setOffers(data));
+    // fetch('/offers.json')
+    // .then((res) => res.json())
+    // .then((data) => setOffers(data));
+    setOffers(offersData);
   },[]);
 
   // useEffect(() => {

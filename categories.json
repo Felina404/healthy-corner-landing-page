@@ -1,0 +1,38 @@
+// [
+//     {
+//         "id": 1,
+//         "name": "appetizers",
+//         "image": "src/assets/appetizers/sardines_soup.webp"
+//     },
+//      {
+//         "id": 2,
+//         "name": "Breakfast",
+//         "image": "src/assets/breakfast/poached_eggs_salmon.webp"
+//     },
+//      {
+//         "id": 3,
+//         "name": "Desserts",
+//         "image": "src/assets/desserts/tarts.webp"
+//     },
+//      {
+//         "id": 4,
+//         "name": "Dinner",
+//         "image": "src/assets/dinner/chicken_roasted_veggies.webp"
+//     },
+//      {
+//         "id": 5,
+//         "name": "Salads",
+//         "image": "src/assets/salads/shrimp.webp"
+//     },
+//      {
+//         "id": 6,
+//         "name": "Smoothies",
+//         "image": "src/assets/smoothies/rasberries_strawberry.webp"
+
+//     },
+//      {
+//         "id": 7,
+//         "name": "Yogurt Bowls",
+//          "image": "src/assets/yogurtBowls/banana_blueberries_cashew.webp"
+//     }
+// ]
