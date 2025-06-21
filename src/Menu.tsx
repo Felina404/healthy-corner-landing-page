@@ -40,12 +40,12 @@ function Menu() {
   const [activeCategory, setActiveCategory] = useState("");
   // const [activeMenu, setActiveMenu] = useState<MenuItem[]>([]); 
   const [page, setPage] = useState(1); 
-  const [offersInView, setOffersInView] = useState<boolean[]>([]);
+  const [offersInView, setOffersInView] = useState<Array<boolean>>([]);
   const [offers, setOffers] = useState<Offer[]>([]);
 
 
   const menuRef = useRef<HTMLDivElement>(null);
-  const offerRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const offerRefs = useRef<Array<HTMLDivElement | null[]>>([]);
   const isUserScrollTriggered = useRef(false);
   const itemsPerPage = 6; 
 
@@ -173,7 +173,7 @@ useEffect(() => {
  
 
 
-  const topRated = menu.filter((item:any) => item.rating >=4.5);
+  const topRated = menu.filter((item) => item.rating >=4.5);
 
     // const itemsPerPage = 6;
     const lastIndex = page * itemsPerPage;
