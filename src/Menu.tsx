@@ -46,7 +46,7 @@ function Menu() {
 
   const menuRef = useRef<HTMLDivElement>(null);
   const offerRefs = useRef<(HTMLDivElement | null)[]>([]);
-
+  const isUserScrollTriggered = useRef(false);
   const itemsPerPage = 6; 
 
     const activeMenu = useMemo(() => {
@@ -113,11 +113,12 @@ function Menu() {
     setPage(1);
   }, [activeCategory]);
 
-  useEffect(() => {
-    if (menuRef.current) {
-      menuRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [page]);
+ useEffect(() => {
+  if (!isUserScrollTriggered.current) return;
+  if (menuRef.current) {
+    menuRef.current.scrollIntoView({ behavior: 'smooth' });
+  }
+}, [page]);
 
   useEffect(() => {
   if (offers.length > 0) {
@@ -179,6 +180,11 @@ useEffect(() => {
     const firstIndex = lastIndex - itemsPerPage;
     // const currentItems = activeMenu.slice(firstIndex, lastIndex);
 
+  const handlePageChange = (newPage: number) => {
+    isUserScrollTriggered.current = true;
+    setPage(newPage);
+  }
+
   return (
     <div  className='flex flex-col items-center justify-center text-fg bg-bg'>    
         <div className='relative w-full flex flex-col items-center justify-center'>
@@ -236,7 +242,7 @@ useEffect(() => {
                 ))}      
            </div>  
 
-           <Pagination itemsPerPage={itemsPerPage} totalItems = {activeMenu.length} page={page} setPage={setPage}/>
+           <Pagination itemsPerPage={itemsPerPage} totalItems = {activeMenu.length} page={page} setPage={handlePageChange}/>
            </div>      
 
           <div id='offers' className='relative w-full flex flex-col items-center justify-center'>
