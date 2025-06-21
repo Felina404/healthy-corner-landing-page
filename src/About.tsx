@@ -4,17 +4,17 @@ import AboutImg from './assets/general.webp'
 function About() {
 
   return (
-    <div id='about' className=''>
+    <div id='about' className='bg-bg p-8 flex flex-col items-center justify-center text-fg'>
         <div>
             <h1 className='mt-8 text-center text-4xl lg:text-6xl font-extrabold'>Reliable, Delicious - Healthy</h1>
         </div>
         <div className='flex flex-col md:flex-row items-center justify-center gap-4 p-4 m-4 lg:gap-8 lg:p-8 lg:m-8'>
              <div className='md:max-w-md'>
                 <div className='p-2 m-2 
-                transition-all duration-900 hover:bg-gradient-to-l hover:from-green-100 hover:to-green-200 rounded-sm'>   
+                transition-all duration-900 hover:bg-gradient-to-l hover:from-accent hover:to-primary hover:text-black rounded-sm'>   
                     <div className='flex gap-2'>
                         <div className='flex items-center justify-center gap-2'>
-                             <i className="fa-solid fa-carrot text-2xl bg-red-300 rounded-full p-2"></i>               
+                             <i className="fa-solid fa-carrot text-2xl bg-accent rounded-full p-2 text-black"></i>               
                              <h2 className='text-xl font-bold'>Natural Food</h2>
                         </div>
                        
@@ -24,10 +24,10 @@ function About() {
                 </div>
 
                 <div className='p-2 m-2
-                transition-all duration-900 hover:bg-gradient-to-l hover:from-green-100 hover:to-green-200 rounded-sm'>   
+                transition-all duration-900 hover:bg-gradient-to-l hover:from-accent hover:to-primary hover:text-black rounded-sm'>   
                     <div className='flex gap-2'>
                         <div className='flex items-center justify-center gap-2'>
-                            <i className="fa-solid fa-bowl-food text-2xl bg-red-300 rounded-full p-2"></i>               
+                            <i className="fa-solid fa-bowl-food text-2xl bg-accent rounded-full p-2 text-black"></i>               
                             <h2 className='text-xl font-bold'>Macros Calculated</h2>
                         </div>            
                         </div>       
@@ -35,10 +35,10 @@ function About() {
                 </div>
 
                 <div className='p-2 m-2
-                transition-all duration-900 hover:bg-gradient-to-l hover:from-green-100 hover:to-green-200 rounded-sm'>   
+                transition-all duration-900 hover:bg-gradient-to-l hover:from-accent hover:to-primary hover:text-black rounded-sm'>   
                     <div className='flex gap-2'>
                         <div className='flex items-center justify-center gap-2'>
-                            <i className="fa-solid fa-utensils text-2xl bg-red-300 rounded-full p-2"></i>               
+                            <i className="fa-solid fa-utensils text-2xl bg-accent rounded-full p-2 text-black"></i>               
                             <h2 className='text-xl font-bold'>Good Taste</h2>
                         </div>
                         
