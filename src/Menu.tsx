@@ -211,7 +211,7 @@ useEffect(() => {
             <div className='flex flex-col md:flex-row  justify-center flex-wrap gap-6'>
                <button onClick={() => {setActiveCategory("")}}
                   key={"all"}
-                  className={`flex flex-col items-center focus:outline-none} cursor-pointer hover:text-muted hover:underline active:text-muted active:underline${activeCategory === "" ? 'text-muted' : 'text-fg'}`}
+                  className={`flex flex-col items-center focus:outline-none} cursor-pointer hover:text-muted hover:underline ${activeCategory === "" ? 'text-muted' : 'text-fg'}`}
                 >
                   <img
                     loading='lazy'
@@ -224,7 +224,7 @@ useEffect(() => {
               {categories && categories.map((category: any) => (
                  <button onClick={() => {setActiveCategory(category.name)}}
                   key={category.id}
-                  className={`flex flex-col items-center focus:outline-none} cursor-pointer hover:text-muted hover:underline active:text-muted active:underline${activeCategory === category.name ? 'text-muted' : 'text-fg'}`}
+                  className={`flex flex-col items-center focus:outline-none} cursor-pointer hover:text-muted hover:underline active:text-muted active:underline ${activeCategory === category.name ? 'text-muted' : 'text-fg'}`}
                 >
                   <img
                     loading='lazy'
