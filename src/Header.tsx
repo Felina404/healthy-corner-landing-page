@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import {useState} from 'react';
 import logo from './assets/header-logo.webp';
 
 interface HeaderProps {

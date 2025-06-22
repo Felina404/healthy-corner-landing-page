@@ -45,7 +45,7 @@ function Menu() {
 
 
   const menuRef = useRef<HTMLDivElement>(null);
-  const offerRefs = useRef<Array<HTMLDivElement | null[]>>([]);
+  const offerRefs = useRef<(HTMLDivElement | null)[]>([]);
   const isUserScrollTriggered = useRef(false);
   const itemsPerPage = 6; 
 
@@ -126,20 +126,20 @@ function Menu() {
   }
 }, [offers]);
 
-let debounceTimeout: NodeJS.Timeout | null = null;
+// let debounceTimeout: NodeJS.Timeout | null = null;
 
-const observerCallback = (idx: number, isVisible: boolean) => {
-  if (debounceTimeout) clearTimeout(debounceTimeout);
+// const observerCallback = (idx: number, isVisible: boolean) => {
+//   if (debounceTimeout) clearTimeout(debounceTimeout);
 
-  debounceTimeout = setTimeout(() => {
-    setOffersInView((prev) => {
-      if (prev[idx] === isVisible) return prev; 
-      const updated = [...prev];
-      updated[idx] = isVisible;
-      return updated;
-    });
-  }, 100); 
-};
+//   debounceTimeout = setTimeout(() => {
+//     setOffersInView((prev) => {
+//       if (prev[idx] === isVisible) return prev; 
+//       const updated = [...prev];
+//       updated[idx] = isVisible;
+//       return updated;
+//     });
+//   }, 100); 
+// };
 
 
 useEffect(() => {
@@ -176,8 +176,8 @@ useEffect(() => {
   const topRated = menu.filter((item) => item.rating >=4.5);
 
     // const itemsPerPage = 6;
-    const lastIndex = page * itemsPerPage;
-    const firstIndex = lastIndex - itemsPerPage;
+    // const lastIndex = page * itemsPerPage;
+    // const firstIndex = lastIndex - itemsPerPage;
     // const currentItems = activeMenu.slice(firstIndex, lastIndex);
 
   const handlePageChange = (newPage: number) => {
