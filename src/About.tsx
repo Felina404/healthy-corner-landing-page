@@ -10,7 +10,7 @@ function About() {
         <div className='flex flex-col md:flex-row items-center justify-center gap-4 p-4 m-4 lg:gap-8 lg:p-8 lg:m-8'>
              <div className='md:max-w-md'>
                 <div className='p-2 m-2 
-                transition-all duration-900 hover:bg-gradient-to-l hover:from-accent hover:to-primary hover:text-black rounded-sm'>   
+                transition-all duration-900 hover:bg-gradient-to-l hover:from-accent hover:to-primary hover:text-black active:bg-gradient-to-l active:from-accent active:to-primary active:text-black rounded-sm'>   
                     <div className='flex gap-2'>
                         <div className='flex items-center justify-center gap-2'>
                              <i className="fa-solid fa-carrot text-2xl bg-accent rounded-full p-2 text-black"></i>               
@@ -23,7 +23,7 @@ function About() {
                 </div>
 
                 <div className='p-2 m-2
-                transition-all duration-900 hover:bg-gradient-to-l hover:from-accent hover:to-primary hover:text-black rounded-sm'>   
+                transition-all duration-900 hover:bg-gradient-to-l hover:from-accent hover:to-primary hover:text-black active:bg-gradient-to-l active:from-accent active:to-primary active:text-black rounded-sm'>   
                     <div className='flex gap-2'>
                         <div className='flex items-center justify-center gap-2'>
                             <i className="fa-solid fa-bowl-food text-2xl bg-accent rounded-full p-2 text-black"></i>               
@@ -34,7 +34,7 @@ function About() {
                 </div>
 
                 <div className='p-2 m-2
-                transition-all duration-900 hover:bg-gradient-to-l hover:from-accent hover:to-primary hover:text-black rounded-sm'>   
+                transition-all duration-900 hover:bg-gradient-to-l hover:from-accent hover:to-primary hover:text-black active:bg-gradient-to-l active:from-accent active:to-primary active:text-black rounded-sm'>   
                     <div className='flex gap-2'>
                         <div className='flex items-center justify-center gap-2'>
                             <i className="fa-solid fa-utensils text-2xl bg-accent rounded-full p-2 text-black"></i>               

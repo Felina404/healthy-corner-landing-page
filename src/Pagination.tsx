@@ -22,7 +22,7 @@ function Pagination({itemsPerPage = 6, totalItems, page, setPage}: PaginationPro
                     <button 
                         key={index +1}
                         onClick = { () => setPage (index +1)} 
-                        className={`px-3 py-1 rounded ${index + 1 === page ? 'bg-primary' : ''} cursor-pointer hover:bg-muted`}>
+                        className={`px-3 py-1 rounded ${index + 1 === page ? 'bg-primary' : ''} cursor-pointer hover:bg-muted active:bg-muted`}>
                         {index + 1}
                         </button>
                 ))
@@ -30,7 +30,7 @@ function Pagination({itemsPerPage = 6, totalItems, page, setPage}: PaginationPro
                     <>
                     <button 
                         onClick = { () => setPage (1)}
-                        className={`px-3 py-1 rounded ${page === 1 ? 'bg-primary' : ''} cursor-pointer hover:bg-muted'`}>
+                        className={`px-3 py-1 rounded ${page === 1 ? 'bg-primary' : ''} cursor-pointer hover:bg-muted active:bg-muted'`}>
                         1
                     </button>
                     {page > 3 && <span className='px-2'>...</span>}
@@ -41,7 +41,7 @@ function Pagination({itemsPerPage = 6, totalItems, page, setPage}: PaginationPro
                                 <button 
                                     key={pageNum}
                                     onClick = { () => setPage (pageNum)}
-                                    className={`px-3 py-1 rounded ${pageNum === page ? 'bg-primary' : ''} cursor-pointer hover:bg-muted'}`}>
+                                    className={`px-3 py-1 rounded ${pageNum === page ? 'bg-primary' : ''} cursor-pointer hover:bg-muted active:bg-muted'}`}>
                                     {pageNum}
                                 </button>
                             );

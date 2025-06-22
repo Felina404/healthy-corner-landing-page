@@ -23,7 +23,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
             <h1 className='text-2xl font-bold'>Healthy Corner</h1>
         </div>
         <div className='md:hidden flex items-center'>
-            <button onClick={toggleMenu} className="text-fg hover:text-muted focus:outline-none cursor-pointer">
+            <button onClick={toggleMenu} className="text-fg hover:text-muted active:text-muted focus:outline-none cursor-pointer">
                 <i className='fas fa-bars text-2xl'></i>
             </button>
         </div>
@@ -31,13 +31,13 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
         {/* desktop navigation */}
         <div className='hidden md:flex items-center space-x-6 text-fg'>
             <nav className='flex space-x-4'>
-                <a href="#menu" className='hover:text-muted'>Menu</a>
-                <a href="#offers" className='hover:text-muted'>Offers</a>
-                <a href="#about" className='hover:text-muted'>About</a>
-                <a href="#footer" className='hover:text-muted'>Contact</a>
+                <a href="#menu" className='hover:text-muted active:text-muted'>Menu</a>
+                <a href="#offers" className='hover:text-muted active:text-muted'>Offers</a>
+                <a href="#about" className='hover:text-muted active:text-muted'>About</a>
+                <a href="#footer" className='hover:text-muted active:text-muted'>Contact</a>
             </nav>
             <a href='#reservation'>
-                <button className='bg-primary text-fg px-4 py-2 rounded hover:bg-secondary cursor-pointer'>
+                <button className='bg-primary text-fg px-4 py-2 rounded hover:bg-secondary active:bg-secondary cursor-pointer'>
                   Make A reservation
               </button>
             </a>
@@ -68,13 +68,13 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
                 <h1 className='text-2xl font-bold'>Healthy Corner</h1>
             </div>
             <nav className='w-full flex flex-col justify-center items-center space-y-4 mb-4 header-logo-line'>   
-                <a onClick={toggleMenu} href="#menu" className='hover:text-muted'>Menu</a>
-                <a onClick={toggleMenu} href="#offers" className='hover:text-muted'>Offers</a>
-                <a onClick={toggleMenu} href="#about" className='hover:text-muted'>About</a>
-                <a onClick={toggleMenu} href="#footer" className='hover:text-muted'>Contact</a>
+                <a onClick={toggleMenu} href="#menu" className='hover:text-muted active:text-muted'>Menu</a>
+                <a onClick={toggleMenu} href="#offers" className='hover:text-muted active:text-muted'>Offers</a>
+                <a onClick={toggleMenu} href="#about" className='hover:text-muted active:text-muted'>About</a>
+                <a onClick={toggleMenu} href="#footer" className='hover:text-muted active:text-muted'>Contact</a>
             </nav>
             <a href='#reservation' onClick={toggleMenu}>
-                <button className='bg-primary text-fg px-4 py-2 rounded hover:bg-secondary cursor-pointer'>
+                <button className='bg-primary text-fg px-4 py-2 rounded hover:bg-secondary active:bg-secondary cursor-pointer'>
                   Make A reservation
               </button>
             </a>

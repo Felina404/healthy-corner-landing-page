@@ -24,7 +24,7 @@ const MenuCard = React.memo(({ item }: { item: MenuItem }) => {
       <img src={item.image} alt={item.name} className="w-32 h-32 object-cover rounded-2xl mb-2" loading="lazy" />
       <p className="text-fg text-left w-full min-h-[4rem]">{item.description}</p>
       <span className="text-primary font-bold">${item.price}</span>
-      <div className="flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity mt-2">
+      <div className="flex items-center justify-center opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity mt-2">
         <div className="text-fg font-semibold text-sm">
           <div>Calories: {item.macros.calories}</div>
           <div>Carbs: {item.macros.carbs}</div>

@@ -120,7 +120,7 @@ function Reservation() {
                     <textarea placeholder='Notes' name='notes' id='notes' value={form.notes} onChange={handleChange}
                     className={`p-2 border rounded-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-accent focus:border-none ${errors.notes ? 'border-error' : 'border-gray-500'}`} required aria-required="true"/>
                    
-                    <button type='submit' onClick={handleSubmit} className='bg-primary text-white px-4 py-2 rounded hover:bg-accent cursor-pointer'>Reserve Now</button>
+                    <button type='submit' onClick={handleSubmit} className='bg-primary text-white px-4 py-2 rounded hover:bg-accent active:bg-accent cursor-pointer'>Reserve Now</button>
                 </form>
 
                 {submit && (
