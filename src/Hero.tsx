@@ -11,7 +11,7 @@ function Hero() {
           alt="Hero" 
         />
         <div className='absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black to-transparent w-full rounded-xl'>
-          <h2 className='text-4xl md:text-5xl lg:text-6xl text-white font-serif w-1/2 lg:w-[30%]'>Where every ingredient matters</h2>
+          <h2 className='text-[min(6vw,70px)] text-white font-serif w-1/2 lg:w-[30%]'>Where every ingredient matters</h2>
           <a href="#menu" className=''>
             <button className='bg-white rounded-2xl p-2 m-2 cursor-pointer hover:bg-secondary'>View Our Menus</button>
           </a>
