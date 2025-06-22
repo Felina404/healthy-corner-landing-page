@@ -4,6 +4,7 @@ import MenuCard from './MenuCard';
 import menuData from './data/menuData';
 import offersData from './data/offers';
 import categoriesData from './data/categoriesData';
+import allIcon from './assets/header-logo.webp';
 
 
 interface MenuItem {
@@ -214,7 +215,7 @@ useEffect(() => {
                 >
                   <img
                     loading='lazy'
-                    src='src/assets/header-logo.webp' 
+                    src={allIcon} 
                     alt= "All Categories"
                     className='w-24 h-24 object-cover rounded-full mb-2'
                   />
