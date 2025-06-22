@@ -11,7 +11,7 @@ function Reservation() {
         tel: '',
         date: '',
         time: '',
-        seats: 1,
+        seats: '',
         notes: ''
     })
 
@@ -58,71 +58,73 @@ function Reservation() {
     
 
   return (
-    <div>
-        <h1 id='reservation' className='p-2 m-2 text-center text-4xl font-semibold underline decoration-green-500 decoration-2 underline-offset-8'>BOOK A TABLE</h1>
+    <div className='text-fg bg-bg'>
+        <h1 id='reservation' className='p-2 text-center text-4xl font-semibold underline decoration-accent decoration-2 underline-offset-8'>BOOK A TABLE</h1>
         <div className='flex flex-col md:flex-row items-center justify-center gap-4 p-4 m-4'>
             <img src={restaurant} alt='restaurant-outdoors' className='md:w-1/2 m-4 p-4 rounded-4xl object-cover'></img>
             <div className='w-full p-2 m-2 md:w-1/2 '>
                 <form className='flex flex-col space-y-4 '>
                     <label htmlFor="name" className="sr-only">Name</label>
                     <input type='text' name='name' id='name' placeholder='Name*' value={form.name} onChange={handleChange}
-                    className={`p-2 border rounded-md focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200 ${errors.name ? 'border-red-500' : 'border-gray-300'}`} required aria-required="true"/>
+                    className={`p-2 border rounded-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-accent focus:border-none ${errors.name ? 'border-error' : 'border-gray-500'}`} required aria-required="true"/>
                     
                     <label htmlFor="email" className="sr-only">email</label>
                     <input type='email' name='email' id='email' placeholder='Email*' value={form.email} onChange={handleChange}
-                    className={`p-2 border rounded-md focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200 ${errors.email ? 'border-red-500' : 'border-gray-300'}`} required aria-required="true"/>
+                    className={`p-2 border rounded-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-accent focus:border-none ${errors.email ? 'border-error' : 'border-gray-500'}`} required aria-required="true"/>
                    
                     <label htmlFor="tel" className="sr-only">tel</label>
                     <input type='tel' name='tel' id='tel' placeholder='Phone Number*' value={form.tel} onChange={handleChange}
-                    className={`p-2 border rounded-md focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200 ${errors.tel ? 'border-red-500' : 'border-gray-300'}`} required aria-required="true"/>
+                    className={`p-2 border rounded-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-accent focus:border-none ${errors.tel ? 'border-error' : 'border-gray-500'}`} required aria-required="true"/>
                     
                     <label htmlFor="date" className="sr-only">date</label> 
                     <input type='date' name='date' id='date' min={minDate} max ={maxDate} value={form.date} onChange={handleChange}
-                    className={`p-2 border rounded-md focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200 ${errors.date ? 'border-red-500' : 'border-gray-300'}`} required aria-required="true"/>
+                    className={`p-2 border rounded-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-accent focus:border-none ${errors.date ? 'border-error' : 'border-gray-500'}`} required aria-required="true"/>
                     
                     <label htmlFor="time" className="sr-only">time</label> 
                     <select name="time" id="time" value={form.time} onChange={handleChange}
-                    className={`p-2 border rounded-md focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200 ${errors.date ? 'border-red-500' : 'border-gray-300'}`} required aria-required="true">
-                        <option value="">Select time</option>
-                        <option value="12:00">12:00</option>
-                        <option value="12:30">12:30</option>
-                        <option value="13:00">13:00</option>
-                        <option value="13:30">13:30</option>
-                        <option value="14:00">14:00</option>
-                        <option value="14:30">14:30</option>
-                        <option value="15:00">15:00</option>
-                        <option value="15:30">15:30</option>
-                        <option value="16:00">16:00</option>
-                        <option value="16:30">16:30</option>
-                        <option value="17:00">17:00</option>
-                        <option value="17:30">17:30</option>
-                        <option value="18:00">18:00</option>
-                        <option value="18:30">18:30</option>
-                        <option value="19:00">19:00</option>
-                        <option value="19:30">19:30</option>
-                        <option value="20:00">20:00</option>
-                        <option value="20:30">20:30</option>
-                        <option value="21:00">21:00</option>
-                        <option value="21:30">21:30</option>
-                        <option value="22:00">22:00</option>
-                        <option value="22:30">22:30</option>
-                        <option value="23:00">23:00</option>
-                        <option value="23:30">23:30</option>
-                        <option value="24:00">24:00</option>
+                    className={`text-fg p-2 border rounded-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-accent focus:border-none ${errors.time ? 'border-error' : 'border-gray-500'}`} required aria-required="true">
+                        <option className='text-black' value="">Select time</option>
+                        <option className='text-black' value="12:00">12:00</option>
+                        <option className='text-black' value="12:30">12:30</option>
+                        <option className='text-black' value="13:00">13:00</option>
+                        <option className='text-black' value="13:30">13:30</option>
+                        <option className='text-black' value="14:00">14:00</option>
+                        <option className='text-black' value="14:30">14:30</option>
+                        <option className='text-black' value="15:00">15:00</option>
+                        <option className='text-black' value="15:30">15:30</option>
+                        <option className='text-black' value="16:00">16:00</option>
+                        <option className='text-black' value="16:30">16:30</option>
+                        <option className='text-black' value="17:00">17:00</option>
+                        <option className='text-black' value="17:30">17:30</option>
+                        <option className='text-black' value="18:00">18:00</option>
+                        <option className='text-black' value="18:30">18:30</option>
+                        <option className='text-black' value="19:00">19:00</option>
+                        <option className='text-black' value="19:30">19:30</option>
+                        <option className='text-black' value="20:00">20:00</option>
+                        <option className='text-black' value="20:30">20:30</option>
+                        <option className='text-black' value="21:00">21:00</option>
+                        <option className='text-black' value="21:30">21:30</option>
+                        <option className='text-black' value="22:00">22:00</option>
+                        <option className='text-black' value="22:30">22:30</option>
+                        <option className='text-black' value="23:00">23:00</option>
+                        <option className='text-black' value="23:30">23:30</option>
+                        <option className='text-black' value="24:00">24:00</option>
                         </select>
                     
                     <label htmlFor="seats" className="sr-only">Seats</label>
-                    <input type='number' name='seats' id='seats' min={1} max={12} value={form.seats} onChange={handleChange}
-                     className={`p-2 border rounded-md focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200 ${errors.seats ? 'border-red-500' : 'border-gray-300'}`} required aria-required="true"/>
-                    {errors.seats && <span className='text-red-500 text-sm'>Please select between 1 and 12 seats.</span>}
+                    <input type='number' name='seats' id='seats' placeholder='Seats*' min={1} max={12} value={form.seats} onChange={handleChange}
+                     className={`p-2 border rounded-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-accent focus:border-none ${errors.seats ? 'border-error' : 'border-gray-500'}`} required aria-required="true"/>
+                    {errors.seats && <span className='text-error text-sm'>Please select between 1 and 12 seats.</span>}
 
                     <label htmlFor="notes" className="sr-only">Notes</label>
                     <textarea placeholder='Notes' name='notes' id='notes' value={form.notes} onChange={handleChange}
-                    className={`p-2 border rounded-md focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200 ${errors.notes ? 'border-red-500' : 'border-gray-300'}`} required aria-required="true"/>
-                    <button type='submit' onClick={handleSubmit} className='bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600'>Reserve Now</button>
+                    className={`p-2 border rounded-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-accent focus:border-none ${errors.notes ? 'border-error' : 'border-gray-500'}`} required aria-required="true"/>
+                   
+                    <button type='submit' onClick={handleSubmit} className='bg-primary text-white px-4 py-2 rounded hover:bg-accent cursor-pointer'>Reserve Now</button>
                 </form>
+
                 {submit && (
-                    <div className='mt-4 p-4 bg-green-100 text-green-800 rounded-md'>
+                    <div className='mt-4 p-4 bg-secondary text-black rounded-md'>
                         <h2 className='text-lg font-semibold'>Reservation Successful!</h2>
                         <p>Thank you for your reservation, {form.name}. We look forward to welcoming you on {form.date} at {form.time}.</p>
                     </div>
