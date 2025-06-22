@@ -1,7 +1,7 @@
 # healthy-corner-landing-page
 
 ## Live Demo
-https://685822b4ed2d0ed8c88588da--healthy-corner-landing-page.netlify.app/
+[https://685822b4ed2d0ed8c88588da--healthy-corner-landing-page.netlify.app/](https://healthy-corner-landing-page.netlify.app/)
 
 ## Features
 - Fully responsive
