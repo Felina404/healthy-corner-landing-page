@@ -50,6 +50,8 @@ function Footer() {
        </div>
        
        <p className='mt-4'>© 2025</p>
+       <a className='text-gray-400' href="https://www.flaticon.com/free-icons/food" title="food icons">Food icons created by justicon - Flaticon</a>
+
       
     </div>
   )
