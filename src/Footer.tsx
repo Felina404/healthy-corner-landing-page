@@ -4,16 +4,16 @@ import './App.css'
 function Footer() {
 
   return (
-    <div id='footer' className='pt-4 bg-gray-800 text-white flex flex-col justify-center items-center'>
+    <div id='footer' className='p-2 bg-fg text-bg flex flex-col justify-center items-center'>
       <div className='flex justify-between items-center w-[80%] px-4 py-2'>
         <div className='flex flex-col'>
           <h2 className='text-xl font-semibold'>Do you have any questions?</h2>
           <p className='mt-2'>Contact us and we will answer any question.</p>
         </div>
-        <button className='flex-none px-4 py-2 bg-white text-black rounded-full font-semibold cursor-pointer'>Contact Us</button>
+        <button className='flex-none px-4 py-2 bg-bg text-fg rounded-full font-semibold cursor-pointer'>Contact Us</button>
     </div>
 
-      <div className='border-b border-gray-200 w-[80%] p-2'></div>
+      <div className='border-b border-bg w-[80%] p-2'></div>
 
       
        <div className='pt-3 flex justify-between items-center w-[80%] px-4 py-2'>
@@ -23,7 +23,7 @@ function Footer() {
           <a href="#about" className="font-semibold"> About</a>
           <a href="#reservation" className="font-semibold"> Reservation</a>
         </div>
-        <div className='flex gap-4'>
+        <div className='flex gap-4 cursor-pointer'>
           <i className="fab fa-facebook-f text-1xl"></i>
           <i className="fab fa-instagram text-1xl"></i>
           <i className="fab fa-twitter text-1xl"></i>

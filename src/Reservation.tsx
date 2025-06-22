@@ -58,8 +58,8 @@ function Reservation() {
     
 
   return (
-    <div className='text-fg bg-bg'>
-        <h1 id='reservation' className='p-2 text-center text-4xl font-semibold underline decoration-accent decoration-2 underline-offset-8'>BOOK A TABLE</h1>
+    <div className='text-fg bg-bg '>
+        <h1 id='reservation' className='p-2text-center text-4xl font-semibold underline decoration-accent decoration-2 underline-offset-8'>BOOK A TABLE</h1>
         <div className='flex flex-col md:flex-row items-center justify-center gap-4 p-4 m-4'>
             <img src={restaurant} alt='restaurant-outdoors' className='md:w-1/2 m-4 p-4 rounded-4xl object-cover'></img>
             <div className='w-full p-2 m-2 md:w-1/2 '>
